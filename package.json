@@ -1,0 +1,47 @@
+{
+  "name": "postcss-reverse-media",
+  "version": "0.1.0",
+  "description": "Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.",
+  "author": {
+    "name": "Eric Eastwood",
+    "email": "contact@ericeastwood.com",
+    "url": "http://ericeastwood.com/"
+  },
+  "keywords": [
+    "postcss",
+    "css",
+    "postcssplugin"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadLittleMods/postcss-reverse-media.git"
+  },
+  "main": "dist/postcss-reverse-media.js",
+  "scripts": {
+    "build": "webpack -p",
+    "build-dev": "webpack --progress --watch",
+    "prepublish": "npm run build",
+    "test": "babel-tape-runner test/test-runner.js",
+    "test-unformatted": "npm run test -- --unformatted"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "postcss": "^5.0.5",
+    "postcss-value-parser": "^2.0.5"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-tape-runner": "^1.2.0",
+    "json-loader": "^0.5.3",
+    "string-to-stream": "^1.0.1",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0",
+    "through2": "^2.0.0",
+    "webpack": "^1.12.2",
+    "yargs": "^3.25.0"
+  }
+}
