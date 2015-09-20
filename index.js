@@ -70,7 +70,7 @@ let reverseParam = function(paramObject, opts) {
 };
 
 let applyReverseKeyword = function(params, opts) {
-	return params.replace(new RegExp(paramRe.source, `${paramRe.flags}g`), (match, operator, param) => {
+	return params.replace(new RegExp(paramRe.source, `${paramRe.flags || ''}g`), (match, operator, param) => {
 		let newParam = param;
 
 		let paramObject = parseParam(param);
