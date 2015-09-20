@@ -20,6 +20,12 @@ test(
 	'@media (max-width: 149.999px) { /*...*/ }'
 );
 
+
+test(
+	'Transform `max-width` with logic at end',
+	'@media (max-width: 300px) and reverse (max-width: 150px) { /*...*/ }',
+	'@media (max-width: 300px) and (min-width: 150.001px) { /*...*/ }'
+);
 test(
 	'Transform `min-width` with logic at end',
 	'@media (min-width: 50px) and reverse (min-width: 150px) { /*...*/ }',
@@ -27,11 +33,10 @@ test(
 );
 
 test(
-	'Transform `max-width` with logic at end',
-	'@media (max-width: 300px) and reverse (max-width: 150px) { /*...*/ }',
-	'@media (max-width: 300px) and (min-width: 150.001px) { /*...*/ }'
+	'Transform `max-width` with logic at start',
+	'@media reverse (max-width: 150px) and (max-width: 300px) { /*...*/ }',
+	'@media (min-width: 150.001px) and (max-width: 300px) { /*...*/ }'
 );
-
 test(
 	'Transform `min-width` with logic at start',
 	'@media reverse (min-width: 150px) and (min-width: 50px) { /*...*/ }',
