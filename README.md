@@ -21,7 +21,7 @@ So I created this plugin so that this kind of thing is easy to do. I prefer to t
 More info about media query logic in this article, [*Logic in Media Queries* on CSS-Tricks](https://css-tricks.com/logic-in-media-queries/)
 
 
-## Latest Version: v0.1.0
+## Latest Version: v0.1.1
 
 ### [Changelog](https://github.com/MadLittleMods/postcss-reverse-media/blob/master/CHANGELOG.md)
 
@@ -35,7 +35,7 @@ More info about media query logic in this article, [*Logic in Media Queries* on 
 
 ```js
 var postcss = require('postcss');
-var mediaReverse = require('postcss-reverse-media');
+var reverseMedia = require('postcss-reverse-media');
 
 var fs = require('fs');
 
@@ -43,7 +43,7 @@ var mycss = fs.readFileSync('input.css', 'utf8');
 
 // Process your CSS with postcss-reverse-media
 var output = postcss([
-        mediaReverse(/*options*/)
+        reverseMedia(/*options*/)
     ])
     .process(mycss)
     .css;
