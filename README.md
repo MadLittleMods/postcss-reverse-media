@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/postcss-reverse-media.svg)](http://badge.fury.io/js/postcss-reverse-media) [![Build Status](https://travis-ci.org/MadLittleMods/postcss-reverse-media.svg)](https://travis-ci.org/MadLittleMods/postcss-reverse-media)
+
 # PostCSS Reverse Media
 
 Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.
@@ -6,12 +8,15 @@ Reverse media query parameters. Equivalent to a `not` if the native syntax allow
 
 Unfortunately the `not all` trick doesn't work when you want to `and` chain another parameter.
 
-This works to reverse/invert/not the media query parameter: `@media not all and (max-width: 250px)`
-When you want to chain, this doesn't work: `@media (max-width: 500px) and not all and (max-width: 250px)`
+ - This works to reverse/invert/not the media query parameter:
+ 	 - `@media not all and (max-width: 250px)`
+ - When you want to chain, this doesn't work:
+ 	 - `@media (max-width: 500px) and not all and (max-width: 250px)`
 
-So I created this plugin so that this kind of thing is easy to do. I prefer to to use `reverse` keyword but feel free to [change it to `not` in the options](#options)
+So I created this plugin so that this kind of thing is easy to do. I prefer to to use the `reverse` keyword(to avoid confusion and collision in the future) but feel free to [change it to `not` in the options](#options).
 
-With `postcss-reverse-media`: `@media (max-width: 500px) and reverse (max-width: 250px)`
+ - With `postcss-reverse-media`:
+ 	 -`@media (max-width: 500px) and reverse (max-width: 250px)`
 
 More info about media query logic in this article, [*Logic in Media Queries* on CSS-Tricks](https://css-tricks.com/logic-in-media-queries/)
 
