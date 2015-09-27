@@ -4,16 +4,16 @@
 
 Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.
 
-## Wait I thought media queries had `not` and logic?
+## Wait, I thought media queries had `not` and logic already?
 
-Unfortunately the `not all` trick doesn't work when you want to `and` chain another parameter.
+Unfortunately the `not all` trick doesn't work when you want to chain(`and`) another parameter.
 
  - This works to reverse/invert/not the media query parameter:
  	 - `@media not all and (max-width: 250px)`
  - When you want to chain, this doesn't work:
  	 - `@media (max-width: 500px) and not all and (max-width: 250px)`
 
-So I created this plugin so that this kind of thing is easy to do. I prefer to to use the `reverse` keyword(to avoid confusion and collision in the future) but feel free to [change it to `not` in the options](#options).
+I created this plugin so that this kind of thing is easy to do. I prefer to to use the `reverse` keyword(to avoid confusion and collision in the future) but feel free to [change it to `not` in the options](#options).
 
  - With `postcss-reverse-media`:
  	 -`@media (max-width: 500px) and reverse (max-width: 250px)`
@@ -65,7 +65,7 @@ Output:
 @media (max-width: 149.999px) { /*...*/ }
 ```
 
-## Great for chaining parameters with logic
+## Chaining parameters with logic
 
 ```css
 @media (max-width: 300px) and reverse (max-width: 150px) { /*...*/ }
@@ -77,6 +77,21 @@ Output:
 @media (max-width: 300px) and (min-width: 150.001px) { /*...*/ }
 
 @media (min-width: 50px) and (max-width: 149.999px) { /*...*/ }
+```
+
+## Use with `postcss-custom-media`
+
+```js
+var pluginStack = [
+	customMedia(),
+	reverseMedia()
+];
+```
+
+```css
+@custom-media --small-viewport (max-width: 150px);
+
+@media reverse (--small-viewport) { /*...*/ }
 ```
 
 
