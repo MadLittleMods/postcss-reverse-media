@@ -67,23 +67,32 @@ Output:
 
 ## Chaining parameters with logic
 
+Input:
 ```css
 @media (max-width: 300px) and reverse (max-width: 150px) { /*...*/ }
 
 @media (min-width: 50px) and reverse (min-width: 150px) { /*...*/ }
 ```
 
+Output:
 ```css
 @media (max-width: 300px) and (min-width: 150.001px) { /*...*/ }
 
 @media (min-width: 50px) and (max-width: 149.999px) { /*...*/ }
 ```
 
-## Use with `postcss-custom-media`
+## Use with other plugins that modify `@media`
+
+Put `postcss-reverse-media` after other plugins that modify `@media` rules. This is to have all of the substitutions and transformations complete before we look for the `reverse` qualifier keyword and do our transformations.
 
 ```js
+var customMedia = require('postcss-custom-media');
+var minmax = require('postcss-media-minmax');
+var reverseMedia = require('postcss-reverse-media');
+
 var pluginStack = [
 	customMedia(),
+	minmax(),
 	reverseMedia()
 ];
 ```
