@@ -1,6 +1,6 @@
 {
   "name": "postcss-reverse-media",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.",
   "author": {
     "name": "Eric Eastwood",
@@ -10,7 +10,7 @@
   "keywords": [
     "postcss",
     "css",
-    "postcssplugin"
+    "postcss-plugin"
   ],
   "license": "MIT",
   "repository": {
@@ -25,8 +25,6 @@
     "test": "babel-tape-runner test/test-runner.js",
     "test-unformatted": "npm run test -- --unformatted"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "object-assign": "^4.0.1",
     "postcss": "^5.0.5",

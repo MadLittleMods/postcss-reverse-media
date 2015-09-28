@@ -21,7 +21,7 @@ I created this plugin so that this kind of thing is easy to do. I prefer to to u
 More info about media query logic in this article, [*Logic in Media Queries* on CSS-Tricks](https://css-tricks.com/logic-in-media-queries/)
 
 
-## Latest Version: v0.1.1
+## Latest Version: v0.1.2
 
 ### [Changelog](https://github.com/MadLittleMods/postcss-reverse-media/blob/master/CHANGELOG.md)
 
