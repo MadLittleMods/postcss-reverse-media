@@ -1,7 +1,7 @@
 {
   "name": "postcss-reverse-media",
   "version": "0.1.2",
-  "description": "Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.",
+  "description": "Reverse/Invert media query parameters",
   "author": {
     "name": "Eric Eastwood",
     "email": "contact@ericeastwood.com",

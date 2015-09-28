@@ -2,7 +2,7 @@
 
 # PostCSS Reverse Media
 
-Reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.
+[PostCSS](https://github.com/postcss/postcss) plugin to reverse media query parameters. Equivalent to a `not` if the native syntax allowed. Useful to avoid media query overlap.
 
 ## Wait, I thought media queries had `not` and logic already?
 
