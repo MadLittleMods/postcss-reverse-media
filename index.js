@@ -87,7 +87,7 @@ const defaults = {
 	keyword: 'reverse',
 	increment: 0.001
 };
-module.exports = postcss.plugin('postcss-media-not', (options) => {
+module.exports = postcss.plugin('postcss-reverse-media', (options) => {
 	let opts = objectAssign({}, defaults, options);
 
 	return function (css/*, result*/) {
